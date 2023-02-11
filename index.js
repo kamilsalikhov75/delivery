@@ -24,15 +24,10 @@ mongoose
     console.log('DB ok');
   })
   .catch((err) => console.log('DB error', err));
-const allowedOrigins = [''];
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: allowedOrigins,
-  })
-);
+app.use(cors());
 
 app.post('/users/registration', userRegistration);
 app.post('/users/login', userLogin);

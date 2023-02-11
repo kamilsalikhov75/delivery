@@ -26,7 +26,11 @@ mongoose
   .catch((err) => console.log('DB error', err));
 
 const app = express();
-app.use(express.json());
+app.use(
+  express.json({
+    origin: '*',
+  })
+);
 app.use(cors());
 
 app.post('/users/registration', userRegistration);

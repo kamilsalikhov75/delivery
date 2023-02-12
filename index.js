@@ -18,9 +18,7 @@ import {
 const port = process.env.PORT || 3001;
 
 mongoose
-  .connect(
-    'mongodb+srv://delivery:delivery3345@cluster0.6ocbklb.mongodb.net/?retryWrites=true&w=majority'
-  )
+  .connect(process.env.DB_URI)
   .then(() => {
     console.log('DB ok');
   })

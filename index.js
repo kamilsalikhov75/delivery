@@ -15,6 +15,7 @@ import {
   getWorkerDeliveries,
   updateDelivery,
 } from './controllers/delivery-controller.js';
+const port = process.env.PORT || 3001;
 
 mongoose
   .connect(
@@ -44,7 +45,7 @@ app.get('/deliveries/worker/:id', checkToken, getWorkerDeliveries);
 app.delete('/deliveries/:id', checkToken, deleteDelivery);
 app.patch('/deliveries/:id', checkToken, updateDelivery);
 
-app.listen(4444, (err) => {
+app.listen(port, (err) => {
   if (err) {
     return console.log(err);
   }

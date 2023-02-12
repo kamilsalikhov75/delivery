@@ -32,7 +32,6 @@ app.use(
     origin: '*',
   })
 );
-app.use(cors());
 
 app.post('/users/registration', userRegistration);
 app.post('/users/login', userLogin);

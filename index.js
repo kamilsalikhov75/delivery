@@ -27,8 +27,9 @@ mongoose
   .catch((err) => console.log('DB error', err));
 
 const app = express();
+app.use(express.json());
 app.use(
-  express.json({
+  cors({
     origin: '*',
   })
 );
